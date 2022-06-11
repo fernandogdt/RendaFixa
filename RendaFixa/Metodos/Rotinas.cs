@@ -23,10 +23,10 @@ namespace RendaFixa.Metodos
                         sqlconsulta = "select * from  tb_instituicao";
                         break;
                     case 2:
-                        sqlconsulta = "select * from  tb_tipoaplicacao";
+                        sqlconsulta = "select * from  tb_modalidade";
                         break;
                     case 3:
-                        sqlconsulta = "select * from  tb_modalidade";
+                        sqlconsulta = "select * from  tb_tipoaplicacao";
                         break;
                     case 4:
                         sqlconsulta = "select * from  tb_aplicacao";
@@ -54,6 +54,34 @@ namespace RendaFixa.Metodos
         }
 
 
+        public static void MenuPrincipal()
+        {
+            Console.WriteLine("Menu Principal");
+            Console.WriteLine("1- Dados Gerenciais");
+            Console.WriteLine("2- Aplicacaoes");
+            Console.WriteLine("0- Sair");
+
+
+
+        }
+
+
+        public static void MenuGerencial()
+        {
+
+            Console.Clear();
+            Console.WriteLine("1- Incluir Instituicao");
+            Console.WriteLine("2- Listar instituicoes");
+            Console.WriteLine("3- Incluir modalidade (CDB/LCA/...)");
+            Console.WriteLine("4- Listar modalidade");
+            Console.WriteLine("5- Incluir tipo (PREFIXADO/POSFIXADO/IPCA)");
+            Console.WriteLine("6- Listar tipo aplicacao");
+            /*   Console.WriteLine("5- Incluir aplicacao");*/
+            Console.WriteLine("0- Voltar");
+            Console.WriteLine();
+            Console.Write("Informe a opcao desejada: ");
+
+        }
 
 
 
