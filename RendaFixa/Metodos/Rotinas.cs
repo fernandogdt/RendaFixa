@@ -23,10 +23,10 @@ namespace RendaFixa.Metodos
                         sqlconsulta = "select * from  tb_instituicao";
                         break;
                     case 2:
-                        sqlconsulta = "select * from  tb_modalidade";
+                        sqlconsulta = "select * from  tb_tipoaplicacao";
                         break;
                     case 3:
-                        sqlconsulta = "select * from  tb_tipoaplicacao";
+                        sqlconsulta = "select * from  tb_modalidade";
                         break;
                     case 4:
                         sqlconsulta = "select * from  tb_aplicacao";
@@ -57,27 +57,55 @@ namespace RendaFixa.Metodos
         public static void MenuPrincipal()
         {
             Console.WriteLine("Menu Principal");
-            Console.WriteLine("1- Dados Gerenciais");
-            Console.WriteLine("2- Aplicacaoes");
-            Console.WriteLine("0- Sair");
-
+            Console.WriteLine();
+            Console.WriteLine("1 - Instituicao");
+            Console.WriteLine("2 - Tipo Aplicacao");
+            Console.WriteLine("3 - Modalidade");
+            Console.WriteLine("4 - Aplicacao");
+            Console.WriteLine("5 - Lancamentos");
+            Console.WriteLine("0 - Sair");
+            Console.WriteLine();
+            Console.Write("Opcao: ");
 
 
         }
 
 
-        public static void MenuGerencial()
+        public static void MenuOpcao(int nrmenu)
         {
+            string dsmenu = "";
+
+            switch (nrmenu)
+            {
+                case 1:
+                    dsmenu = "Instituicao";
+                    break;
+                case 2:
+                    dsmenu = "Tipo Aplicacao (PREFIXADO/POSFIXADO/IPCA)";
+                    break;
+                case 3:
+                    dsmenu = @"Modalidade (CDB\LCA)";
+                    break;
+                case 4:
+                    dsmenu = "Aplicacao";
+                    break;
+                case 5:
+                    dsmenu = "Lançamentos";
+                    break;
+                default:
+                    break;
+            }
+
+
 
             Console.Clear();
-            Console.WriteLine("1- Incluir Instituicao");
-            Console.WriteLine("2- Listar instituicoes");
-            Console.WriteLine("3- Incluir modalidade (CDB/LCA/...)");
-            Console.WriteLine("4- Listar modalidade");
-            Console.WriteLine("5- Incluir tipo (PREFIXADO/POSFIXADO/IPCA)");
-            Console.WriteLine("6- Listar tipo aplicacao");
-            /*   Console.WriteLine("5- Incluir aplicacao");*/
-            Console.WriteLine("0- Voltar");
+            Console.WriteLine(dsmenu);
+            Console.WriteLine();
+            Console.WriteLine("C - Consultar");
+            Console.WriteLine("I - Incluir");
+            Console.WriteLine("A - Alterar");
+            Console.WriteLine("E - Excluir");
+            Console.WriteLine("0 - Voltar");
             Console.WriteLine();
             Console.Write("Informe a opcao desejada: ");
 

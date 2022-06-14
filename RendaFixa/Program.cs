@@ -7,72 +7,179 @@ namespace RendaFixa
     {
         static void Main(string[] args)
         {
-            string vr_opcao;
+            int cdmenuprincipal = 0;
+            string cdmenuopcao = "C";
 
-            Rotinas.MenuPrincipal();
-            vr_opcao = Console.ReadLine();
-            while (vr_opcao != "0")
+
+            try
             {
-                switch (vr_opcao)
-                {
-                    case "1":
 
-                        Rotinas.MenuGerencial();
-                        vr_opcao = Console.ReadLine();
 
-                        while (vr_opcao != "0")
-                        {
-                            switch (vr_opcao)
-                            {
-                                case "1":
-                                    Rotinas.Insereinstituicao();
-                                    break;
-                                case "2":
-                                    Rotinas.ListaDados(1);
-                                    break;
-                                case "3":
-                                    Rotinas.InsereModalidade();
-                                    break;
-                                case "4":
-                                    Rotinas.ListaDados(2);
-                                    break;
-                                case "5":
-                                    Rotinas.Inseretipoaplicacao();
-                                    break;
-                                case "6":
-                                    Rotinas.ListaDados(3);
-                                    break;
-                                case "7":
-                                    Rotinas.Insereaplicacao();
-                                    break;
-                                case "8":
-                                    Rotinas.ListaDados(4);
-                                    break;
-                                default:
-                                    break;
-                            }
-                            Rotinas.MenuGerencial();
-                            vr_opcao = Console.ReadLine();
-                            
 
-                        }
-                        break;
-
-                    /*          case "2":
-                                  Rotinas.MenuAplicacao();
-                                  break;*/
-                    default:
-                        break;
-                }
                 Rotinas.MenuPrincipal();
-                vr_opcao = Console.ReadLine();
+                cdmenuprincipal = int.Parse(Console.ReadLine());
+                while (cdmenuprincipal != 0)
+                {
+                    switch (cdmenuprincipal)
+                    {
+                        case 1:  //Instituicao
+
+                            Rotinas.MenuOpcao(cdmenuprincipal);
+
+                            cdmenuopcao = Console.ReadLine().ToUpper();
+
+                            while (cdmenuopcao != "0")
+                            {
+                                switch (cdmenuopcao)
+                                {
+                                    case "C":
+                                        Rotinas.ListaDados(cdmenuprincipal);
+                                        break;
+                                    case "I":
+                                        Rotinas.Insereinstituicao(); 
+                                        break;
+                                    case "A":
+                                        break;
+                                    case "E":
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Rotinas.MenuOpcao(cdmenuprincipal);
+
+                                cdmenuopcao = Console.ReadLine().ToUpper();
+                            }
+                            break;
+
+                        case 2: // Tipo Aplicacao 
+                            Rotinas.MenuOpcao(cdmenuprincipal);
+
+                            cdmenuopcao = Console.ReadLine().ToUpper();
+
+                            while (cdmenuopcao != "0")
+                            {
+                                switch (cdmenuopcao)
+                                {
+                                    case "C":
+                                        Rotinas.ListaDados(cdmenuprincipal);
+                                        break;
+                                    case "I":
+                                        Rotinas.Inseretipoaplicacao();
+                                        break;
+                                    case "A":
+                                        break;
+                                    case "E":
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Rotinas.MenuOpcao(cdmenuprincipal);
+
+                                cdmenuopcao = Console.ReadLine().ToUpper();
+                            }
+                            break;
+                        case 3: // Modalidade
+                            Rotinas.MenuOpcao(cdmenuprincipal);
+
+                            cdmenuopcao = Console.ReadLine().ToUpper();
+
+                            while (cdmenuopcao != "0")
+                            {
+                                switch (cdmenuopcao)
+                                {
+                                    case "C":
+                                        Rotinas.ListaDados(cdmenuprincipal);
+                                        break;
+                                    case "I":
+                                        Rotinas.InsereModalidade();
+                                        break;
+                                    case "A":
+                                        break;
+                                    case "E":
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Rotinas.MenuOpcao(cdmenuprincipal);
+
+                                cdmenuopcao = Console.ReadLine().ToUpper();
+                            }
+                            break;
+                        case 4: //aplicacao
+                            Rotinas.MenuOpcao(cdmenuprincipal);
+
+                            cdmenuopcao = Console.ReadLine().ToUpper();
+
+                            while (cdmenuopcao != "0")
+                            {
+                                switch (cdmenuopcao)
+                                {
+                                    case "C":
+                                        Rotinas.ListaDados(cdmenuprincipal);
+                                        break;
+                                    case "I":
+                                        Rotinas.Insereaplicacao();
+                                        break;
+                                    case "A":
+                                        break;
+                                    case "E":
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Rotinas.MenuOpcao(cdmenuprincipal);
+
+                                cdmenuopcao = Console.ReadLine().ToUpper();
+                            }
+                            break;
+                        case 5: // Lancamentos
+                            Rotinas.MenuOpcao(cdmenuprincipal);
+
+                            cdmenuopcao = Console.ReadLine().ToUpper();
+
+                            while (cdmenuopcao != "0")
+                            {
+                                switch (cdmenuopcao)
+                                {
+                                    case "C":
+                                        Rotinas.ListaDados(cdmenuprincipal);
+                                        break;
+                                    case "I":
+                                     //   Rotinas.Inserelancamento();
+                                        break;
+                                    case "A":
+                                        break;
+                                    case "E":
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                Rotinas.MenuOpcao(cdmenuprincipal);
+
+                                cdmenuopcao = Console.ReadLine().ToUpper();
+                            }
+                            break;
+                        default:
+                            break;
+
+
+                    }
+
+                    Rotinas.MenuPrincipal();
+                    cdmenuprincipal = int.Parse(Console.ReadLine());
+                }
 
             }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("Deu ruim:" + e.Message);
             }
+        }
 
 
-              
-               
+
+
 
     }
 }
